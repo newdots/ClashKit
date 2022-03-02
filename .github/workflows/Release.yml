@@ -40,5 +40,5 @@ jobs:
           git add ./Package.swift
           git commit -m "Release ${{ github.event.inputs.version }}!!!" -a
           git push origin main
-          git tag -a ${{ github.event.inputs.version }} -m "Release ${{ github.event.inputs.version }}!!!"
+          git tag -a ${{ github.event.inputs.version }} -m "Release ${{ github.event.inputs.checksum }}!!!"
           git push origin --tags
