@@ -28,8 +28,16 @@ jobs:
           echo "" >> Package.swift
           echo "let package = Package(" >> Package.swift
           echo "  name: \"ClashKit\"," >> Package.swift
-          echo "  products: [.library(name: \"ClashKit\", targets: [\"ClashKit\"])]," >> Package.swift
-          echo "  targets: [.binaryTarget(name: \"ClashKit\", url: \"https://github.com/Clash-for-Apple/clash-interface/releases/download/${{ github.event.inputs.version }}/ClashKit.xcframework.zip\", checksum: \"${{ github.event.inputs.checksum }}\")]" >> Package.swift
+          echo "  products: [" >> Package.swift
+          echo "    .library(name: \"ClashKit\", targets: [\"ClashKit\"])" >> Package.swift
+          echo "  ]," >> Package.swift
+          echo "  targets: [" >> Package.swift
+          echo "    .binaryTarget(" >> Package.swift
+          echo "      name: \"ClashKit\"," >> Package.swift
+          echo "      url: \"https://github.com/Clash-for-Apple/clash-interface/releases/download/${{ github.event.inputs.version }}/ClashKit.xcframework.zip\"," >> Package.swift
+          echo "      checksum: \"${{ github.event.inputs.checksum }}\"" >> Package.swift
+          echo "    )" >> Package.swift
+          echo "  ]" >> Package.swift
           echo ")" >> Package.swift
           
       - name: Commit
