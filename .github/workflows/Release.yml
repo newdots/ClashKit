@@ -29,7 +29,7 @@ jobs:
           echo "let package = Package(" >> Package.swift
           echo "  name: \"ClashKit\"," >> Package.swift
           echo "  products: [" >> Package.swift
-          echo "    .library(name: \"ClashKit\", type: .dynamic, targets: [\"ClashKit\"])" >> Package.swift
+          echo "    .library(name: \"ClashKit\", targets: [\"ClashKit\"])" >> Package.swift
           echo "  ]," >> Package.swift
           echo "  targets: [" >> Package.swift
           echo "    .binaryTarget(" >> Package.swift
